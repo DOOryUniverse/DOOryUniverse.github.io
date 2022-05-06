@@ -1,6 +1,6 @@
 # Bias-Variance(편향과 분산)
 
-날짜: 2022-04-15
+
 
 ![출처-파이썬 머신러닝 기초](https://user-images.githubusercontent.com/95261734/167057007-b47f3ad4-ede9-487b-aa82-2026534da66c.png)
 

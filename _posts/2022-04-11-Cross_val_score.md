@@ -1,7 +1,6 @@
 # Cross_val_score
 
-Data: 붓꽃 데이터
-날짜: 2022-04-11
+
 
 ```python
 sklearn.model_selection.cross_val_score

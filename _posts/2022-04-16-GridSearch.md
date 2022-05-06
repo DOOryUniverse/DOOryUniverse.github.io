@@ -1,7 +1,7 @@
 # GridSearch
 
-Data: 붓꽃 데이터
-날짜: 2022-04-11
+
+
 
 ```python
 1  sklearn.model_selection.GridSearchCV

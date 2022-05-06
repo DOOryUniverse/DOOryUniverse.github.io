@@ -1,6 +1,6 @@
 # Linear regression 선형 회귀
 
-날짜: 2022-04-15
+
 
 **#### sklearn.linear_model.LinearRegression**
 
