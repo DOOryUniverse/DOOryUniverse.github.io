@@ -34,7 +34,7 @@ plt.plot(X,y_pred, color='blue', linewidth=3)
 plt.show()
 ```
 
-![output.png](Linear%20regression%20%E1%84%89%E1%85%A5%E1%86%AB%E1%84%92%E1%85%A7%E1%86%BC%20%E1%84%92%E1%85%AC%E1%84%80%E1%85%B1%2045c775112a3849b6a8dc1d5160e83b94/output.png)
+![output.png](https://user-images.githubusercontent.com/95261734/167057399-4446210b-211e-4c7b-87b6-1773ff7c3896.png)
 
 ```python
 # 당뇨병 예제
@@ -62,7 +62,7 @@ plt.plot(x,y)
 plt.show()
 ```
 
-![ouput.png](Linear%20regression%20%E1%84%89%E1%85%A5%E1%86%AB%E1%84%92%E1%85%A7%E1%86%BC%20%E1%84%92%E1%85%AC%E1%84%80%E1%85%B1%2045c775112a3849b6a8dc1d5160e83b94/ouput.png)
+![ouput.png](https://user-images.githubusercontent.com/95261734/167057403-42c70627-3de0-471a-b6ce-1586130a9bab.png)
 
 보스턴 주택 가격 예측
 
@@ -98,7 +98,7 @@ for i , feature in enumerate(lm_features):
     sns.regplot(x=feature , y='PRICE',data=bostonDF , ax=axs[row][col])
 ```
 
-![output.png](Linear%20regression%20%E1%84%89%E1%85%A5%E1%86%AB%E1%84%92%E1%85%A7%E1%86%BC%20%E1%84%92%E1%85%AC%E1%84%80%E1%85%B1%2045c775112a3849b6a8dc1d5160e83b94/output%201.png)
+![output.png](https://user-images.githubusercontent.com/95261734/167057400-7a18525f-3fdf-45a3-b1c1-a31475cfc4d6.png)
 
 ```markdown
 ### Polynomial Regression
