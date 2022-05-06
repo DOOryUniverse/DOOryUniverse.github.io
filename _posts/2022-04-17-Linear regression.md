@@ -1,8 +1,7 @@
-# Linear regression 선형 회귀
-
-
-
-**#### sklearn.linear_model.LinearRegression**
+---
+title: Linear Regression
+layout: post
+---
 
 - class sklearn.linear_model.LinearRegression(*, fit_intercept=True, normalize='deprecated', copy_X=True, n_jobs=None, positive=False)
 

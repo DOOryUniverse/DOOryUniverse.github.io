@@ -1,4 +1,7 @@
-# Bias-Variance(편향과 분산)
+---
+title: 편향과 분산(bias and variance)
+layout: post
+---
 
 
 

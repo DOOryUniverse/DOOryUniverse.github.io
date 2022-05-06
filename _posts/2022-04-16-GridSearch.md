@@ -1,5 +1,7 @@
-# GridSearch
-
+---
+title: Grid SearchCV
+layout: post
+---
 
 
 

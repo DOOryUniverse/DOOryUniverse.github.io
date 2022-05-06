@@ -1,4 +1,7 @@
-# Cross_val_score
+---
+title: Cross_val_score
+layout: post
+---
 
 
 
