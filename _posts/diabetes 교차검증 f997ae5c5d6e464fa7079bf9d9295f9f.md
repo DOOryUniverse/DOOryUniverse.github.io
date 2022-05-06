@@ -1,0 +1,57 @@
+# diabetes 교차검증
+
+Data: diabetes 데이터
+날짜: 2022-04-11
+
+```python
+import pandas as pd
+db=pd.read_csv('./diabetes.csv')
+```
+
+```python
+# 결측치 확인
+def check_missing_col(dataframe):
+    missing_col = []
+    for col in dataframe.columns:
+        missing_values = sum(dataframe[col].isna())
+        is_missing = True if missing_values >= 1 else False
+        if is_missing:
+            print(f'결측치가 있는 컬럼은: {col} 입니다')
+            print(f'해당 컬럼에 총 {missing_values} 개의 결측치가 존재합니다.')
+            missing_col.append([col, dataframe[col].dtype])
+    if missing_col == []:
+        print('결측치가 존재하지 않습니다')
+    return missing_col
+
+missing_col = check_missing_col(db)
+```
+
+```python
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.model_selection import cross_val_score
+from sklearn.metrics import accuracy_score
+from sklearn.model_selection import train_test_split
+from sklearn.model_selection import GridSearchCV
+
+x = db[['Pregnancies', 'Glucose', 'BloodPressure', 'SkinThickness', 'Insulin',
+        'BMI', 'DiabetesPedigreeFunction', 'Age']]
+y = db[['Outcome']]
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.2)
+
+# dbt_data = df_dbt.iloc[:, 0:-1]
+# dbt_label = df_dbt.iloc[:, -1:]
+# X_train, X_test, y_train, y_test = train_test_split(dbt_data, dbt_label,test_size = 0.2, random_state = 121)
+
+dtree = DecisionTreeClassifier()
+parameters = {"max_depth" : [5,6,7], "min_samples_split":[2,3,4]}
+grid_dtree = GridSearchCV(dtree, param_grid = parameters, cv = 3, refit = True)
+grid_dtree.fit(x_train, y_train)
+scores_df = pd.DataFrame(grid_dtree.cv_results_)
+scores_df[["params", "mean_test_score", "rank_test_score",
+            "split0_test_score", "split1_test_score", "split2_test_score"]]
+print(f"GridSearchCV 최적 파라미터 : {grid_dtree.best_params_}")
+print(f"GridSearchCV 최고 정확도 : {grid_dtree.best_score_ : .4f}")
+estimator = grid_dtree.best_estimator_
+pred = estimator.predict(x_test)
+print(f"테스트 데이터 세트 정확도 {accuracy_score(y_test, pred):.4f}")
+```
